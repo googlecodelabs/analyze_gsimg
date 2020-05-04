@@ -5,10 +5,10 @@ You may find wildly varying code when it comes to security when see code in our 
 There are several generations of Google-related authorization and client libraries for Python—other languages may also have this issue. Google upgraded to a newer authorization library (see below) in [May 2017](https://github.com/googleapis/oauth2client/pull/714), but plenty of code using the older auth libraries is still out there, so some of the files here are also meant to help with the migration process.
 
 
-> **Authentication* vs. *Authorization**:
-> *Authentication* is all about identities and establishing "you are who you say you are." Examples include logins & passwords, 2FA, biometrics (handprint, retina scan), HTTP Basic & Digest, etc. *Authorization* is all about data access *after* authentication complete. Yes, you are who you say you are, but do you have access to the data you're requesting?
+> **Authentication vs. Authorization**:
+> So, *Authentication* is all about identities and establishing "you are who you say you are." Examples include logins & passwords, 2FA, biometrics (handprint, retina scan), HTTP Basic & Digest, etc. *Authorization* is all about data access *after* authentication complete. Yes, you are who you say you are, but do you have access to the data you're requesting?
 >
-> Both terms are generally referred to in industry as "authn" & "authz" for differentiation. Another source of confusion is that as a whole, the term "auth" is used to describe both, especially when used in conjunction with each other.
+> Both terms are generally referred to in industry as "authn" & "authz" for differentiation. Another source of confusion is that as a whole, the general term "auth" is used to describe both, especially when used in conjunction with each other.
 
 
 ## What libraries are available
@@ -20,7 +20,7 @@ There are several generations of Google-related authorization and client librari
 While `oauth2client` is Python 2 & 3 compatible, cache OAuth tokens for developers, and threadsafe, it's unfortunately deprecated and no longer actively developed nor maintained. (\* — `httplib2` is still used internally by the newer auth libraries below, but users no longer have to do so explicitly.) So we recommend you port to these newer auth libraries:
 
 * Newer auth libraries
-    - [`google.auth`](https://github.com/googleapis/google-auth-library-python)
+    - [`google.auth` & `google.oauth2`](https://github.com/googleapis/google-auth-library-python)
     - [`google_auth_oauthlib`](https://github.com/googleapis/google-auth-library-python-oauthlib)
 
 These libraries are available for both Python 2 & 3 and are currently maintained, however they require developers to manage their own OAuth tokens. In our code samples, you'll see that the OAuth2 credentials are saved as JSON (to `tokens.json`). The only issue with the token management service is that it's not threadsafe (whereas it is in the older libraries that manage the tokens on behalf of developers).
