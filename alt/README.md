@@ -5,8 +5,8 @@ You may find wildly varying code when it comes to security when see code in our 
 There are several generations of Google-related authorization and client libraries for Python—other languages may also have this issue. Google upgraded to a newer authorization library (see below) in [May 2017](https://github.com/googleapis/oauth2client/pull/714), but plenty of code using the older auth libraries is still out there, so some of the files here are also meant to help with the migration process.
 
 
-> *Authentication* vs. *Authorization*
-> **Authentication** is all about identities and establishing "you are who you say you are." Examples include logins & passwords, 2FA, biometrics (handprint, retina scan), HTTP Basic & Digest, etc. **Authorization** is all about data access *after* authentication complete. Yes, you are who you say you are, but do you have access to the data you're requesting?
+> **Authentication* vs. *Authorization**:
+> *Authentication* is all about identities and establishing "you are who you say you are." Examples include logins & passwords, 2FA, biometrics (handprint, retina scan), HTTP Basic & Digest, etc. *Authorization* is all about data access *after* authentication complete. Yes, you are who you say you are, but do you have access to the data you're requesting?
 >
 > Both terms are generally referred to in industry as "authn" & "authz" for differentiation. Another source of confusion is that as a whole, the term "auth" is used to describe both, especially when used in conjunction with each other.
 
@@ -131,7 +131,7 @@ Replace...
 Replace...
 
     creds = None
-    TOKENS = 'token.p' # OAuth2 token storage
+    TOKENS = 'tokens.json' # OAuth2 token storage
     SCOPES = (
         'https://www.googleapis.com/auth/drive.readonly',
         'https://www.googleapis.com/auth/devstorage.full_control',

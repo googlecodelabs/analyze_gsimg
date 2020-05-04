@@ -3,7 +3,7 @@
 
 In the codelab at <http://g.co/codelabs/drive-gcs-vision-sheets>, developers build a cloud-based image processing workflow in Python along with Google Cloud REST APIs from [GCP](http://cloud.google.com) and [G Suite](http://developers.google.com/gsuite). The exercise imagines an enterprise scenario where an organization can backup data (image files, for example) to the cloud, analyze them with machine learning, and report results formatted for consumption by management. This repo provides code solutions for each step through the tutorial plus alternate versions featuring other libraries and/or authorization schemes.
 
-This is an intermediate codelab. If you're new to using Google APIs, specifically G Suite and/or GCP APIs, we recommend doing more introductory codelabs to each of these products first (see list at the bottom of this page).
+This is an intermediate codelab. If you're new to using Google APIs, specifically G Suite and/or GCP APIs, we recommend completing the introductory codelabs (listed at the bottom of this page) first.
 
 
 ## Prerequisites
@@ -26,7 +26,7 @@ The primary objective is to **analyze a G Suite image**... everything else (arch
  The first step utilizes the [Google Drive API](https://developers.google.com/drive) to search for the image file and downloads the first match. Along with the filename and binary payload, the file's MIMEtype, last modification timestamp, and size in bytes are also returned.
 
 1. **Backup image to Google Cloud Storage**
- The next step is to upload the image as a "blob" [object](https://cloud.google.com/storage/docs/key-terms#objects) to [Google Cloud Storage](https://cloud.google.com/storage) (GCS), performing an "insert" to the given [bucket](https://cloud.google.com/storage/docs/key-terms#buckets). Once data is inGCS, it can then be used by other GCP tools. GCS also supports cheaper, "colder" storage, meaning the less often you access objects, the lower the cost, as described on the [storage class page](https://cloud.google.com/storage/docs/storage-classes). NOTE: "/" in GCS filenames is merely a visual cue as GCS doesn't support "folders." Our solution features an optional `PARENT` folder to help organize images in the destination bucket. (The GCP client libraries prep the data for GCS, so we need the *platform* client library [`MediaIoBaseUpload`](https://googleapis.github.io/google-api-python-client/docs/epy/googleapiclient.http.MediaIoBaseUpload-class.html) convenience object to help with the upload using the platform library.)
+ The next step is to upload the image as a "blob" [object](https://cloud.google.com/storage/docs/key-terms#objects) to [Google Cloud Storage](https://cloud.google.com/storage) (GCS), performing an "insert" to the given [bucket](https://cloud.google.com/storage/docs/key-terms#buckets). Once data is in GCS, it can then be used by other GCP tools. GCS also supports cheaper, "colder" storage, meaning the less often you access objects, the lower the cost, as described on the [storage class page](https://cloud.google.com/storage/docs/storage-classes). NOTE: "/" in GCS filenames is merely a visual cue as GCS doesn't support "folders." Our solution features an optional `PARENT` folder to help organize images in the destination bucket. (The GCP client libraries prep the data for GCS, so we need the *platform* client library [`MediaIoBaseUpload`](https://googleapis.github.io/google-api-python-client/docs/epy/googleapiclient.http.MediaIoBaseUpload-class.html) convenience object to help with the upload using the platform library.)
 
 1. **Send image to Cloud Vision for analysis**
  Since we have the image binary data, let's also send it to [Cloud Vision](https://cloud.google.com/vision) for analysis. Using its API, request object detection/identification (called [_label annotation_](https://cloud.google.com/vision/docs/labels)), but ask only for the top 5 labels for a faster response. Each label returned includes a confidence score the label applies to the image.
@@ -51,9 +51,9 @@ The goal of the codelab sample app is to help developers envision possible busin
 # References
 
 - Codelabs
-    - [Intro the G Suite APIs (with the Google Drive API)](http://g.co/codelabs/gsuite-apis-intro) (Python)
+    - [Intro to G Suite APIs (Google Drive API)](http://g.co/codelabs/gsuite-apis-intro) (Python)
     - [Using Cloud Vision with Python](http://g.co/codelabs/vision-python) (Python)
-    - [Build customized reporting tools with the Sheets API](http://g.co/codelabs/sheets) (JS/Node)
+    - [Build customized reporting tools (Google Sheets API)](http://g.co/codelabs/sheets) (JS/Node)
     - [Upload objects to Google Cloud Storage](http://codelabs.developers.google.com/codelabs/cloud-upload-objects-to-cloud-storage) (no coding required)
 - General
     - [Google APIs client library for Python](https://developers.google.com/api-client-library/python)
@@ -69,4 +69,4 @@ The goal of the codelab sample app is to help developers envision possible busin
         - [Vision API image labeling docs](https://cloud.google.com/vision/docs/labels)
     - [Python on the Google Cloud Platform](https://cloud.google.com/python)
     - [GCP product client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)
-    - [GCP documentation](https://cloud.google.com/docs).
+    - [GCP documentation](https://cloud.google.com/docs)
