@@ -51,14 +51,14 @@ The goal of the codelab sample app is to help developers envision possible busin
 # References
 
 - Codelabs
-    - [Intro to Google Workspace (formerly G Suite) APIs (Google Drive API)](http://g.co/codelabs/gsuite-apis-intro) (Python)
+    - [Intro to Workspace APIs (Google Drive API)](http://g.co/codelabs/gsuite-apis-intro) (Python)
     - [Using Cloud Vision with Python](http://g.co/codelabs/vision-python) (Python)
     - [Build customized reporting tools (Google Sheets API)](http://g.co/codelabs/sheets) (JS/Node)
     - [Upload objects to Google Cloud Storage](http://codelabs.developers.google.com/codelabs/cloud-upload-objects-to-cloud-storage) (no coding required)
 - General
     - [Google APIs client library for Python](https://developers.google.com/api-client-library/python)
     - [Google APIs client libraries](https://developers.google.com/api-client-library)
-- Google Workspace (formerly G Suite)
+- Google Workspace
     - [Google Drive API home page](https://developers.google.com/drive)
     - [Google Sheets API home page](https://developers.google.com/sheets)
     - [Google Workspace (formerly G Suite) developer overview & documentation](https://developers.google.com/gsuite).
