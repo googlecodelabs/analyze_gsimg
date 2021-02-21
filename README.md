@@ -1,14 +1,14 @@
 # Cloud image processing workflow:
-### Image archive, analysis, and report generation with G Suite & GCP
+### Image archive, analysis, and report generation with Google Workspace (formerly G Suite) & GCP
 
-In the codelab at <http://g.co/codelabs/drive-gcs-vision-sheets>, developers build a cloud-based image processing workflow in Python along with Google Cloud REST APIs from [GCP](http://cloud.google.com) and [G Suite](http://developers.google.com/gsuite). The exercise imagines an enterprise scenario where an organization can backup data (image files, for example) to the cloud, analyze them with machine learning, and report results formatted for consumption by management. This repo provides code solutions for each step through the tutorial plus alternate versions featuring other libraries and/or authorization schemes.
+In the [intermediate codelab tutorial](http://g.co/codelabs/drive-gcs-vision-sheets), developers build a cloud-based image processing workflow in Python along with Google Cloud REST APIs from [GCP](http://cloud.google.com) and [Google Workspace (formerly G Suite)](http://developers.google.com/gsuite). The exercise imagines an enterprise scenario where an organization can backup data (image files, for example) to the cloud, analyze them with machine learning, and report results formatted for consumption by management. This repo provides code solutions for each step through the tutorial plus alternate versions featuring other libraries and/or authorization schemes.
 
-This is an intermediate codelab. If you're new to using Google APIs, specifically G Suite and/or GCP APIs, we recommend completing the introductory codelabs (listed at the bottom of this page) first.
+This is an intermediate codelab. If you're new to using Google APIs, specifically Google Workspace (formerly G Suite) and/or GCP APIs, we recommend completing the introductory codelabs (listed at the bottom of this page) first.
 
 
 ## Prerequisites
 
-- A Google account (G Suite accounts may require administrator approval)
+- A Google account (Google Workspace/G Suite accounts may require administrator approval)
 - A Google Cloud Platform project with an active billing account
 - Familiarity with operating system terminal/shell commands
 - Basic skills in [Python](http://python.org) 2 or 3 ([other languages supported](http://developers.google.com/api-client-library))
@@ -20,7 +20,7 @@ This is an intermediate codelab. If you're new to using Google APIs, specificall
 
 ## Description
 
-The primary objective is to **analyze a G Suite image**... everything else (archiving, report generation) is a bonus. It starts with the image file on Google Drive, archives it to Google Cloud Storage, analyzes it with Cloud Vision, and writes a "results" row into a Google Sheet. Each step of the tutorial builds successively on the previous step, adding one feature at a time. Each of the `step*` directories represent the state the application should be in upon successful completion of that corresponding step in the codelab, culminating with a refactor step to arrive at the `final` version.
+The primary objective is to **analyze Google Workspace images**... everything else (archiving, report generation) is a bonus. It starts with the image file on Google Drive, archives it to Google Cloud Storage, analyzes it with Cloud Vision, and writes a "results" row into a Google Sheet. Each step of the tutorial builds successively on the previous step, adding one feature at a time. Each of the `step*` directories represent the state the application should be in upon successful completion of that corresponding step in the codelab, culminating with a refactor step to arrive at the `final` version.
 
 1. **Download image from Google Drive**
  The first step utilizes the [Google Drive API](https://developers.google.com/drive) to search for the image file and downloads the first match. Along with the filename and binary payload, the file's MIMEtype, last modification timestamp, and size in bytes are also returned.
@@ -40,28 +40,28 @@ The primary objective is to **analyze a G Suite image**... everything else (arch
 
 ## Authorization scheme and alternative versions
 
-We've selected to use *user account authorization* (instead of *service account authorization*), *platform* client libraries (instead of *product* client libraries since those aren't available for G Suite APIs), and older auth libraries for readability, consistency, greater Python 2-3 compatibility, and automated OAuth2 token management. This provides what we hope is the least complex user experience. Alternative versions (of the final application) using service accounts, product client libraries, and newer currently-supported auth libraries, are found in the [`alt`](alt) subdirectory. See its [README](alt/README.md) for more information.
+We've selected to use *user account authorization* (instead of *service account authorization*), *platform* client libraries (instead of *product* client libraries since those aren't available for Google Workspace (formerly G Suite) APIs), and older auth libraries for readability, consistency, greater Python 2-3 compatibility, and automated OAuth2 token management. This provides what we hope is the least complex user experience. Alternative versions (of the final application) using service accounts, product client libraries, and newer currently-supported auth libraries, are found in the [`alt`](alt) subdirectory. See its [README](alt/README.md) for more information.
 
 
 ## Summary and further study
 
-The goal of the codelab sample app is to help developers envision possible business scenarios. A secondary goal is showing how to use GCP and G Suite APIs together for one solution. Problems with either the codelab or code in this repo? [File an issue](https://github.com/googlecodelabs/feedback/issues/new?title=[drive-gcs-vision-sheets]:&labels[]=content-platform&labels[]=cloud,python) (do a search first).
+The goal of the codelab sample app is to help developers envision possible business scenarios. A secondary goal is showing how to use GCP and Google Workspace (formerly G Suite) APIs together for one solution. Problems with either the codelab or code in this repo? [File an issue](https://github.com/googlecodelabs/feedback/issues/new?title=[drive-gcs-vision-sheets]:&labels[]=content-platform&labels[]=cloud,python) (do a search first).
 
 
 # References
 
 - Codelabs
-    - [Intro to G Suite APIs (Google Drive API)](http://g.co/codelabs/gsuite-apis-intro) (Python)
+    - [Intro to Google Workspace (formerly G Suite) APIs (Google Drive API)](http://g.co/codelabs/gsuite-apis-intro) (Python)
     - [Using Cloud Vision with Python](http://g.co/codelabs/vision-python) (Python)
     - [Build customized reporting tools (Google Sheets API)](http://g.co/codelabs/sheets) (JS/Node)
     - [Upload objects to Google Cloud Storage](http://codelabs.developers.google.com/codelabs/cloud-upload-objects-to-cloud-storage) (no coding required)
 - General
     - [Google APIs client library for Python](https://developers.google.com/api-client-library/python)
     - [Google APIs client libraries](https://developers.google.com/api-client-library)
-- G Suite
+- Google Workspace (formerly G Suite)
     - [Google Drive API home page](https://developers.google.com/drive)
     - [Google Sheets API home page](https://developers.google.com/sheets)
-    - [G Suite developer overview & documentation](https://developers.google.com/gsuite).
+    - [Google Workspace (formerly G Suite) developer overview & documentation](https://developers.google.com/gsuite).
 - Google Cloud Platform (GCP)
     - [Google Cloud Storage home page](https://cloud.google.com/storage)
     - [Google Cloud Vision home page & live demo](https://cloud.google.com/vision)
